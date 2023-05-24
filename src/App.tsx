@@ -48,7 +48,7 @@ class App extends Component<{}, State>{
       bookList : data.data
     })
   }
-  rentbook = async (id: number) => {
+  rentbook = async (id: number) => { // könyv lefoglalása, és ha már lfeoglaltuk írja is ki
     let response = await fetch("http://localhost:3000/api/books/"  + id + "/rent", {
       method: "POST"
     })
@@ -64,7 +64,7 @@ class App extends Component<{}, State>{
     }
    
   }
-  addNewBook = async () => {
+  addNewBook = async () => { //új könyv felvétele  
     let data : Book = {
       id: 0,
       title: this.state.inputCim,
